@@ -1,0 +1,92 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+/* navbar */
+
+.nav-btn {
+	text-align: right;
+	font-size: 28px;
+	margin-top: 10px;
+	&:hover {
+		font-size: 24px;
+	}
+}
+
+a {
+	color: rgba(0,0,0,0.8);
+	&:hover {
+		color: rgba(0,0,0,0.2);
+		text-decoration: none;
+	}
+	&:focus {
+		text-decoration: none;
+		color: rgba(0,0,0,0.8);
+	}
+}
+
+/* content */
+
+.cont {
+	margin-top: 5px;
+	text-align: center;
+}
+
+/* info */
+
+.avt {
+	height: 60px;
+	width: 60px;
+}
+
+.logo {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+	font-size: 36px;
+	padding-top: 5px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.br1 {
+	border-bottom: 1px solid rgba(0,0,0,0.4);
+	margin: 0 35px 20px 40px;
+}
+
+.br2 {
+	margin-bottom: 5px;
+}
+
+.inf {
+	margin-left: 15px;
+}
+
+.drop {
+	padding: none;
+	margin-left: 15px;
+	margin-top: -10px;
+}
+
+.dropdown ul {
+	height: 200px;
+	overflow-y: scroll; 
+}
+
+.dropdown div {
+	height: 200px !important;
+}
+
+.login {
+	margin-left: 30px;
+}
+
+/* footer */
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid rgba(0,0,0,0.4);
+}

@@ -1,0 +1,22 @@
+<% provide(:title, 'Home') %>
+<div class="">
+	<% if log_in? %>
+		<div class="">
+			<% if @friends.empty? %>
+				<tr>
+					<td>no friends</td>
+				</tr>
+			<% else %>
+				<% @photos.each do |photo| %>
+					<tr>
+						<td>
+							<%= image_tag(photo.src) %>
+						</td>
+					</tr>
+				<% end %>
+			<% end %>
+		</div>
+	<% else %>
+		<h1>Welcome!</h1>
+	<% end %>
+</div>

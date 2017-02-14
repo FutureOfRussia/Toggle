@@ -1,0 +1,46 @@
+<div class="col-sm-3">
+	<div class="row">
+		<div class="logo">TOGGLE</div>
+	</div>
+	<div class="row">
+		<div class="br1"></div>
+	</div>
+	<% if !log_in? %>
+	<div class="row">
+		<div class="col-sm-8">
+		<p class="inf">
+			<%= link_to "#@user.first_name", "vk_url(@user)", target: '_blank'%>
+		 	<br class="br2">
+		 	Фото: <%= link_to "45", "#" %>
+			<div class="dropdown drop">
+			Друзья:
+     			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 12 / 34</a>
+        			<ul class="dropdown-menu">
+	     				<li><%= link_to "us", "#" %></li>
+	     				<li><%= link_to "us", "#" %></li>
+	     				<li><%= link_to "us", "#" %></li>
+	     				<li class="divider"></li>
+	     				<li><%= link_to "user", "#" %></li>
+	     				<li><%= link_to "us", "#" %></li>
+	     				<li><%= link_to "user", "#" %></li>
+	     				<li><%= link_to "user", "#" %></li>
+	     				<li><%= link_to "us", "#" %></li>
+	     				<li><%= link_to "user", "#" %></li>
+	     				<li><%= link_to "user", "#" %></li>
+    				</ul>
+    		</div>
+		</p>
+		</div>
+		<div class="col-sm-4">
+			<%= link_to image_tag("@user.photo", class: 'avt img-circle'), '#' %>
+		</div>
+	</div>
+	<% else %>
+		<div class="row">
+			<% link_to signin_path, class: 'btn btn-lg login' do %>
+				<span class="glyphicon glyphicon-log-in"></span>
+				&nbsp;Login using <b>VK</b>
+			<% end %>
+		</div>
+	<% end %>
+</div>
