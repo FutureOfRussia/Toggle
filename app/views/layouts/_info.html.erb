@@ -5,11 +5,11 @@
 	<div class="row">
 		<div class="br1"></div>
 	</div>
-	<% if !log_in? %>
+	<% if log_in? %>
 	<div class="row">
 		<div class="col-sm-8">
 		<p class="inf">
-			<%= link_to "#@user.first_name", "vk_url(@user)", target: '_blank'%>
+			<%= link_to "#{@user.first_name}", vk_url(@user), target: '_blank'%>
 		 	<br class="br2">
 		 	Фото: <%= link_to "45", "#" %>
 			<div class="dropdown drop">
@@ -32,7 +32,7 @@
 		</p>
 		</div>
 		<div class="col-sm-4">
-			<%= link_to image_tag("@user.photo", class: 'avt img-circle'), '#' %>
+			<%= link_to image_tag(@user.photo, class: 'avt img-circle'), '#' %>
 		</div>
 	</div>
 	<% else %>
