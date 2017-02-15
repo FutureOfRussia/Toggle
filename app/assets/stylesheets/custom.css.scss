@@ -76,12 +76,12 @@ a {
 }
 
 .dropdown ul {
-	height: 200px;
+	max-height: 200px;
 	overflow-y: scroll; 
 }
 
 .dropdown div {
-	height: 200px !important;
+	max-height: 200px !important;
 }
 
 .login {
