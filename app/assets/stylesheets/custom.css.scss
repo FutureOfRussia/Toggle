@@ -8,7 +8,10 @@ body {
 /* navbar */
 
 .nav-btn {
-	text-align: right;
+	padding: 0 5px 0 5px;
+	height: 35px;
+	width: 45px;
+	text-align: center;
 	font-size: 28px;
 	margin-top: 10px;
 	&:hover {
@@ -80,7 +83,16 @@ a {
 }
 
 .login {
-	margin-left: 30px;
+	&:active {
+		box-shadow: none;
+	}
+	&:hover {
+		color: rgba(0,0,0,0.2);
+	}
+}
+
+.log-in {
+	text-align: center;
 }
 
 /* footer */
