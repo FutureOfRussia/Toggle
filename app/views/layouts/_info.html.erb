@@ -8,13 +8,12 @@
 	<% if log_in? %>
 	<div class="row">
 		<div class="col-sm-8">
-		<p class="inf">
 			<div class="dropdown drop">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><%= "#{@user.first_name}" %></a>
-					<ul class="dropdown-menu">
-	     				<li><%= link_to "Ваш профиль", vk_url(@user), target: '_blank' %></li>
-	     				<li><%= link_to "Выход", signout_path %></li>
-	     			</ul>
+				<ul class="dropdown-menu">
+	     			<li><%= link_to "Ваш профиль", vk_url(@user), target: '_blank' %></li>
+	     			<li><%= link_to "Выход", signout_path %></li>
+	     		</ul>
 	     	</div>
 		 	Фото: <%= link_to "45", "#" %>
 			<div class="dropdown drop">
@@ -34,7 +33,6 @@
 	     				<li><%= link_to "user", "#" %></li>
     				</ul>
     		</div>
-		</p>
 		</div>
 		<div class="col-sm-4">
 			<%= link_to image_tag(@user.photo, class: 'avt img-circle'), '#' %>
