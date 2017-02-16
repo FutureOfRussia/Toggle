@@ -20,10 +20,7 @@
 		<h1>Welcome!</h1>
 		<div id="vk_auth"></div>
 		<script type="text/javascript">
-			VK.Widgets.Auth("vk_auth", {width: "200px",
-			onAuth: function(data){
-				alert('user'+data['uid']+'authorized');
-			}});
+			VK.Widgets.Auth("vk_auth", {width: "200px", authUrl:'/signin'});
 		</script>
 	<% end %>
 </div>
