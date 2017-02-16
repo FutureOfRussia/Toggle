@@ -40,9 +40,8 @@ a {
 
 /* info */
 
-.avt {
-	height: 60px;
-	width: 60px;
+.info-align {
+	text-align: center;
 }
 
 .logo {
@@ -54,13 +53,15 @@ a {
 	font-family: 'Raleway', sans-serif;
 }
 
-.br1 {
+.br {
 	border-bottom: 1px solid rgba(0,0,0,0.4);
 	margin: 0 35px 20px 40px;
 }
 
-.br2 {
-	margin-bottom: 5px;
+.drop {
+	margin-left: 15px;
+	text-align: left;
+	padding: none;
 }
 
 .inf {
@@ -69,10 +70,9 @@ a {
 	text-align: left;
 }
 
-.drop {
-	margin-left: 15px;
-	text-align: left;
-	padding: none;
+.avt {
+	height: 60px;
+	width: 60px;
 }
 
 .dropdown ul {
@@ -84,6 +84,20 @@ a {
 	max-height: 200px !important;
 }
 
+/* footer */
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid rgba(0,0,0,0.4);
+}
+
+
+
+
+
+
+
 .login {
 	&:active {
 		box-shadow: none;
@@ -91,16 +105,4 @@ a {
 	&:hover {
 		color: rgba(0,0,0,0.2);
 	}
-}
-
-.log-in {
-	text-align: center;
-}
-
-/* footer */
-
-footer {
-	margin-top: 45px;
-	padding-top: 5px;
-	border-top: 1px solid rgba(0,0,0,0.4);
 }

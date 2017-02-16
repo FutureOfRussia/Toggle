@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
 		srand
 		session[:state] ||= Digest::MD5.hexdigest(rand.to_s)
 
-		@vk_url = VkontakteApi.authorization_url(scope: [:friends, :groups, :offline, :notify, :photos],
+		@vk_url = VkontakteApi.authorization_url(display: 'popup', 
+												 scope: [:friends, :groups, :offline, :notify, :photos],
 												 state: session[:state])
 		redirect_to @vk_url
 	end

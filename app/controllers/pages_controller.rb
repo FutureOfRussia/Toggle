@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def home
+	def home
 		if log_in?
 		vk = VkontakteApi::Client.new(session[:token])
 
@@ -8,5 +8,8 @@ class PagesController < ApplicationController
 		@photos = vk.photos.get(owner_id: 78141952, album_id: 'saved')
 
 		end
+	end
+
+	def index
 	end
 end
