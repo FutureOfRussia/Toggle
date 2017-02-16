@@ -18,9 +18,6 @@
 		</div>
 	<% else %>
 		<h1>Welcome!</h1>
-		<div id="vk_auth"></div>
-		<script type="text/javascript">
-			VK.Widgets.Auth("vk_auth", {width: "200px", authUrl:'/signin'});
-		</script>
+		<%= link_to "login", signin_path %>
 	<% end %>
 </div>
