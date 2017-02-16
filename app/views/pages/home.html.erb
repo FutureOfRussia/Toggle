@@ -7,7 +7,7 @@
 					<td>no friends</td>
 				</tr>
 			<% else %>
-				<% @photos.each do |photo| %>
+				<% @photos.items.each do |photo| %>
 					<tr>
 						<td>
 							<%= image_tag(photo.photo_807) %>
