@@ -7,12 +7,13 @@
 					<td>no friends</td>
 				</tr>
 			<% else %>
+				<% @photos.items.each do |item| %>
 					<tr>
 						<td>
-							<%= "#{@photos.items}" %>
+							<%= "#{item}" %>
 						</td>
 					</tr>
-				
+				<% end %>
 			<% end %>
 		</div>
 	<% else %>
