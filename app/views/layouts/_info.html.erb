@@ -34,19 +34,11 @@
 
 		<div class="dropdown drop">
 			Друзья:
-     		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> 12 / 34</a>
+     		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+     			<%= "#{@friens.count}" %> 
+     		</a>
         		<ul class="dropdown-menu">
-					<li><%= link_to "us", "#" %></li>
-					<li><%= link_to "us", "#" %></li>
-					<li><%= link_to "us", "#" %></li>
-					<li class="divider"></li>
-					<li><%= link_to "user", "#" %></li>
-					<li><%= link_to "us", "#" %></li>
-					<li><%= link_to "user", "#" %></li>
-					<li><%= link_to "user", "#" %></li>
-					<li><%= link_to "us", "#" %></li>
-					<li><%= link_to "user", "#" %></li>
-					<li><%= link_to "user", "#" %></li>
+					<%= render 'shared/friends' %>
 				</ul>
     	</div>
 

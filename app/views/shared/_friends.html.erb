@@ -1,0 +1,10 @@
+<% if @friends.empty? %>
+	<li>Друзья не найдены</li>
+<% else %>
+	<% @friends.items.each do |item| %>
+		<li>
+			<%= link_to full_name(item), '#' %>		
+			<%= link_to image_tag(item.photo, class: 'avt img-circle'), '#' %>
+		</li>
+	<% end %>
+<% end %>
