@@ -86,10 +86,15 @@ a {
 }
 
 .friends-menu {
-	min-width: 250px;
+	width: 250px;
+}
+
+.friens-name {
+	width: 200px;
 }
 
 .friends-avt {
+	margin-left: 10px;
 	height: 40px;
 	width: 40px;
 }
