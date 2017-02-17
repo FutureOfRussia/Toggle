@@ -18,13 +18,15 @@
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       
+      <!-- Main -->
+
       <% if log_in? %> 
 
       <div class="row">
 
         <!-- Content -->
 
-        <div class="col-sm-9"><%= yield %></div>
+        <div class="col-sm-9 cont"><%= yield %></div>
 
         <!-- Info -->
 
