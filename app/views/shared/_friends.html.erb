@@ -3,11 +3,9 @@
 <% else %>
 	<% @friends.items.each do |item| %>
 		<li>
-			<a href='#' >
-			<div class="row friends-menu">
-				<div class="friends-name"><%= full_name(item) %></div>
-				<div class="friends-avt"><%= image_tag(item.photo, class: 'img-circle') %></div>
-			</div>
+			<a href='#' class="row friends-menu">
+				<span class="friends-name"><%= full_name(item) %></span>
+				<span class="friends-avt"><%= image_tag(item.photo, class: 'img-circle') %></span>
 			</a>
 		</li>
 	<% end %>
