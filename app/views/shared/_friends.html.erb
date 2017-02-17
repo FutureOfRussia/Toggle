@@ -3,9 +3,10 @@
 <% else %>
 	<% @friends.items.each do |item| %>
 		<li>
-			<%= link_to full_name(item), '#' do %>
-				<%= image_tag(item.photo, class: 'avt img-circle') %>
-			<% end %>
+			<a href='#' >
+				<%= full_name(item) %>
+				<%= image_tag(item.photo, class: 'avt-menu img-circle') %>
+			</a>
 		</li>
 	<% end %>
 <% end %>
