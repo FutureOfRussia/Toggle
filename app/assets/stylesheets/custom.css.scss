@@ -86,13 +86,13 @@ a {
 }
 
 .friends-name {
-	display: inline;
+	display: inline-block;
 	background-color: red;
 	width: 200px;
 }
 
 .friends-img {
-	display: inline; 
+	display: inline-block; 
 	background-color: blue;
 	padding: 5px;
 }
