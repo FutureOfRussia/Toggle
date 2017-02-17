@@ -3,9 +3,9 @@
 <% else %>
 <div class="search">
 	<li>
-		<%= form_tag("/search", method: "get") do %>
-			<%= text_field_tag(session[:search]) %>
-			<%= submit_tag ("Search") %>
+		<%= form_tag(@session, remote: true) do |f| %>
+			<%= f.text_field :search %>
+			<%= f.submit "Search" %>
 		<% end %>
 	</li>
 </div>
