@@ -36,11 +36,8 @@
      		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
 			Друзья: <%= @user.counters.friends %> 
      		</a>
-     			<form accept-charset="UTF-8" action="/search" class="dropdown-menu" method="get">
-					<input type="text" class="form-control" placeholder="Search">
-				</form>
         		<ul class="dropdown-menu">
-					<%= render 'shared/friends' %>
+     				<%= render 'shared/friends' %>
 				</ul>
     	</div>
 
