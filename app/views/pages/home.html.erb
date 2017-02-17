@@ -2,14 +2,13 @@
 <div class="">
 	<% if log_in? %>
 		<div class="">
-				<% @photos.items.each do |item| %>
-					<tr>
-						<td>
-							<%= "#{item.photo_804}" %>
-							<img src="<%= "#{item.photo_804}" %>">
-						</td>
-					</tr>
-				<% end %>
+			<% @photos.items.each do |item| %>
+				<tr>
+					<td>
+						<%= "#{item.photo_804}" %>
+						<img src="<%= "#{item.photo_804}" %>">
+					</td>
+				</tr>
 			<% end %>
 		</div>
 	<% else %>
