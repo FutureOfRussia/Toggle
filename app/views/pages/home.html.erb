@@ -2,14 +2,10 @@
 <div class="">
 	<% if log_in? %>
 		<div class="">
-			<% if @friends.empty? %>
-				<tr>
-					<td>no friends</td>
-				</tr>
-			<% else %>
 				<% @photos.items.each do |item| %>
 					<tr>
 						<td>
+							<%= "#{item.photo_804}" %>
 							<img src="<%= "#{item.photo_804}" %>">
 						</td>
 					</tr>
