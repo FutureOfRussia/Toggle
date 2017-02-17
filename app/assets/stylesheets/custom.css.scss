@@ -55,7 +55,7 @@ a {
 
 .br {
 	border-bottom: 1px solid rgba(0,0,0,0.4);
-	margin: 0 35px 20px 40px;
+	margin: 0 30px 20px 25px;
 }
 
 .drop {
@@ -74,9 +74,21 @@ a {
 	font-weight: 600;
 }
 
+.info {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .avt {
 	height: 60px;
 	width: 60px;
+}
+
+.avt-pd {
+	padding-left: 0;
+	padding-right: 0;
+	height: 67px;
+	padding-top: 4px;
 }
 
 .dropdown-menu {
