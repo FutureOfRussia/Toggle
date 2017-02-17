@@ -15,8 +15,9 @@ class PagesController < ApplicationController
 	end
 
 	def search
+		search = params[:search]
 		vk = VkontakteApi::Client.new(session[:token])
-		@search_friends = vk.friends.search(uid: session[:vk_id], q: session[:search], fields: [:screen_name, :name, :photo])
+		@search_friends = vk.friends.search(q: search, fields: [:screen_name, :name, :photo])
 		respond_to do |format|
 			format.js
 		end	
