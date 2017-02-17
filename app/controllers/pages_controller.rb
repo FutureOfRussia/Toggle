@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
 
-	respond_to :html, :js
-
 	def home
 		if log_in?
 
@@ -18,7 +16,9 @@ class PagesController < ApplicationController
 
 	def search
 		@search_friends = vk.friends.search(q: session[:search], fields: [:screen_name, :name, :photo])
-		respond_with
+		respond_to do |format|
+			format.js
+		end	
 	end
 
 	def index
