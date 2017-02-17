@@ -109,7 +109,12 @@ a {
 }
 
 .scroll {
-	overflow-y: auto; 
+	overflow-y: auto;
+	max-height: 416px; 
+}
+
+.search {
+	width: 200px;
 }
 
 .friends-name {
