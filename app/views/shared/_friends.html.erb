@@ -5,7 +5,9 @@
 		<li>
 			<a href='#' >
 				<%= full_name(item) %>
-				<%= image_tag(item.photo, class: 'avt-menu img-circle') %>
+				<div class="avt-menu">
+					<%= image_tag(item.photo, class: 'img-circle') %>
+				</div>
 			</a>
 		</li>
 	<% end %>
