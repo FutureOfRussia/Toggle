@@ -4,8 +4,8 @@
 	<% @friends.items.each do |item| %>
 		<li>
 			<a href='#' >
-				<td class="td-name"><%= full_name(item) %></td>
-				<td class="td-img"><%= image_tag(item.photo, class: 'img-circle') %></td>
+				<td align="justify"  ><%= full_name(item) %>
+				<%= image_tag(item.photo, class: 'img-circle') %></td>
 			</a>
 		</li>
 	<% end %>
