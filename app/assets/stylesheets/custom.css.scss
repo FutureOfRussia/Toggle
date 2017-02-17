@@ -5,21 +5,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-/* navbar */
-
-.nav-btn {
-	padding: 0 5px 0 5px;
-	height: 35px;
-	width: 45px;
-	text-align: center;
-	font-size: 28px;
-	margin-top: 10px;
-	&:hover {
-		font-size: 24px;
-	}
-}
-
-a {
+.info > a {
 	color: rgba(0,0,0,0.8);
 	&:hover {
 		color: rgba(0,0,0,0.2);
@@ -97,7 +83,13 @@ a {
 }
 
 .dropdown-menu > .scroll > li > a {
-	padding: 2px 6px;
+	padding: 0px 6px;
+}
+
+.dropdown-menu > .scroll > li {
+	&:hover {
+		background-color: rgba(0,0,0,0.2);
+	}
 }
 
 .dropdown ul {
@@ -123,6 +115,8 @@ a {
 
 .friends-img {
 	display: inline-block;
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 
 /* footer */
