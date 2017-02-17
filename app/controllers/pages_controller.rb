@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
 	def home
 		if log_in?
+
+		session[:token] = cookies[:token] if session[:token].empty?
+
 		vk = VkontakteApi::Client.new(session[:token])
 
 		@user = vk.users.get(uid: session[:vk_id], fields: [:screen_name, :photo]).first

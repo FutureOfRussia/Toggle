@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 		@vk = VkontakteApi.authorize(code: params[:code])
 		session[:token] = @vk.token
 		session[:vk_id] = @vk.user_id
+		cookies.permanent[:token] = @vk.token
 		redirect_to root_url
 		end
 	end
@@ -25,6 +26,7 @@ class SessionsController < ApplicationController
 	def destroy
 		session[:token] = nil
 		session[:vk_id] = nil
+		cookies[:token] = nil
 
 		redirect_to root_url
 	end

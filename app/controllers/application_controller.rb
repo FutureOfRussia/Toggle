@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   helper_method :log_in? 
 
 	def log_in?
-		session[:token].present?
+		cookies[:token].present? || session[:token].present?
 	end
 end
