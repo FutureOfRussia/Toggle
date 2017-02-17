@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 			vk = VkontakteApi::Client.new(session[:token])
 
 			@user = vk.users.get(uid: session[:vk_id], fields: [:screen_name, :photo, :counters]).first
-			@friends = vk.friends.get(order: 'hints', fields: [:screen_name, :name, :photo])
+			@friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
 			@photos = vk.photos.get(owner_id: 78141952, album_id: 'saved')
 
 		end
