@@ -61,7 +61,6 @@ a {
 .drop {
 	margin-left: 15px;
 	text-align: left;
-	padding: none;
 }
 
 .inf {
@@ -79,9 +78,8 @@ a {
 	padding: 0;
 }
 
-.m-p-nill {
-	padding: 0;
-	margin: 0;
+.dropdown-menu > li > a {
+	padding: 2px 6px;
 }
 
 .dropdown ul {
@@ -95,7 +93,7 @@ a {
 
 .friends-name {
 	display: inline-block;
-	width: 180px;
+	width: 200px;
 }
 
 .friends-img {

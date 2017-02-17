@@ -3,7 +3,7 @@
 <% else %>
 	<% @friends.items.each do |item| %>
 		<li>
-			<a href='#' class="m-p-nill" >
+			<a href='#'>
 				<div class="friends-name"><%= full_name(item) %></div>
 				<div class="friends-img"><%= image_tag(item.photo, class: 'img-circle') %></div>
 			</a>
