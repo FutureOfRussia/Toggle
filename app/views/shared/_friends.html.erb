@@ -4,7 +4,7 @@
 	<% @friends.items.each do |item| %>
 		<li>
 			<%= link_to full_name(item), '#' do %>
-				<%= link_to image_tag(item.photo, class: 'avt img-circle'), '#' %>
+				<%= image_tag(item.photo, class: 'avt img-circle') %>
 			<% end %>
 		</li>
 	<% end %>
