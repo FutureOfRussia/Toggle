@@ -75,6 +75,9 @@ a {
 	width: 60px;
 }
 
+.dropdown-menu {
+	padding: none;
+}
 
 .dropdown ul {
 	max-height: 450px;
@@ -87,12 +90,11 @@ a {
 
 .friends-name {
 	display: inline-block;
-	width: 200px;
+	width: 180px;
 }
 
 .friends-img {
 	display: inline-block;
-	padding: 5px;
 }
 
 /* footer */
