@@ -1,0 +1,14 @@
+<% if @friends.empty? %>
+	<li>Друзья не найдены</li>
+<% else %>
+<div class="search">
+	<li>
+		<form accept-charset="UTF-8" action="/search" data-remote="true" method="get">
+			<input type="text" name="session[search]" class="form-control" placeholder="Search">
+		</form>
+	</li>
+</div>
+<div class="scroll" id="search">	
+	<%= render 'shared/friends' %>
+</div>
+<% end %>
