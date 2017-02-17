@@ -4,7 +4,7 @@
 	<% @friends.items.each do |item| %>
 		<li>
 			<a href='#' >
-			<div class="row">
+			<div class="row friends-menu">
 				<div class="col-sm-6"><%= full_name(item) %></div>
 				<div class="col-sm-6"><%= image_tag(item.photo, class: 'friends-avt img-circle') %></div>
 			</div>
