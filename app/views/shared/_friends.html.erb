@@ -1,4 +1,4 @@
-<% if @friends.empty? %>
+<% if @user.counters.friends.empty? %>
 	<li>Друзья не найдены</li>
 <% else %>
 	<% @friends.items.each do |item| %>
