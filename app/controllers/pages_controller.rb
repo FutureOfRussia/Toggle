@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
 			@friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
 			
-			@photos = vk.photos.get(owner_id: session[:vk_id], album_id: 'saved')
+			@photos = vk.photos.get(uid: session[:vk_id], album_id: 'saved')
 
 		end
 	end
