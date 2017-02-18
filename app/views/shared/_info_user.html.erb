@@ -18,14 +18,14 @@
 
 	<div class="col-sm-8 info">
 		
-		<div class="dropdown drop">
-			<a href="#" class="dropdown-toggle inf-name" data-toggle="dropdown" role="button">
-				<%= @current_user.first_name %>
-			</a>
-			<ul class="dropdown-menu">
-	    		<li><%= link_to "Ваш профиль", vk_url(@current_user), target: '_blank' %></li>
-	    		<li><%= link_to "Выход", signout_path, method: :delete %></li>
-	    	</ul>
+		<div>
+			<%= @current_user.first_name %>
+			<%= link_to vk_url(@current_user), target: '_blank' do %>
+				<span class="glyphicon glyphicon-user"></span>
+			<% end %>
+	    	<%= link_to signout_path, method: :delete do %>
+	    		<span class="glyphicon glyphicon-log-out"></span>
+	    	<% end %>
 	    </div>
 
 	    <div class="inf">
