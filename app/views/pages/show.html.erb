@@ -1,5 +1,6 @@
-<% provide(:title, "#{@friend.first_name @friend.last_name}") %>
+<% provide(:title, ) %>
 <div class="col-sm-9">
+<%= @friend %>
 	<% @friend_photos.items.each do |item| %>
 		<tr>
 			<td>
@@ -9,5 +10,4 @@
 	<% end %>
 </div>
 <div class="col-sm-3">
-	<%= render 'shared/info_friend' %>
 </div>
