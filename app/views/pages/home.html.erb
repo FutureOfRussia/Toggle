@@ -1,4 +1,4 @@
-<% provide(:title, full_name(@current_user)) %>
+<% provide(:title, full_name(@current_user) if log_in?) %>
 <% if log_in? %>
 	<div class="col-sm-9">
 		<div class="cont">
