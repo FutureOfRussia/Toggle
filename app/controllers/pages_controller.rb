@@ -31,7 +31,19 @@ class PagesController < ApplicationController
 		friend_id = params[:id]
 		vk = VkontakteApi::Client.new(session[:token])
 		@friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
-		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved')
-		
+		@friend_albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
+		if check_saved?
+			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved') if check_saved?
+		else
+			@saved_error = 1
+		end
+
 	end
+
+	private
+
+	def check_saved?
+		saved = @friend_albums.items.find_by(id: -15)
+		saved.present?
+	end 
 end
