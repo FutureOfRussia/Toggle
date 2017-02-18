@@ -10,10 +10,10 @@ class PagesController < ApplicationController
 				
 			vk = VkontakteApi::Client.new(session[:token])
 
-			@current_user = vk.users.get(uid: session[:vk_id], 
+			$current_user = vk.users.get(uid: session[:vk_id], 
 										fields: [:screen_name, :photo, :counters]).first
-			@friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
-			@photos = vk.photos.get(uid: session[:vk_id], album_id: 'saved')
+			$friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
+			$photos = vk.photos.get(uid: session[:vk_id], album_id: 'saved')
 
 		end
 	end
@@ -21,7 +21,7 @@ class PagesController < ApplicationController
 	def search
 		search = params[:search]
 		vk = VkontakteApi::Client.new(session[:token])
-		@search_friends = vk.friends.search(q: search, fields: [:screen_name, :name, :photo])
+		$search_friends = vk.friends.search(q: search, fields: [:screen_name, :name, :photo])
 		respond_to do |format|
 			format.js
 		end	
@@ -32,8 +32,5 @@ class PagesController < ApplicationController
 		vk = VkontakteApi::Client.new(session[:token])
 		@friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
 		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved')
-		respond_to do |format|
-			format.js
-		end
 	end
 end

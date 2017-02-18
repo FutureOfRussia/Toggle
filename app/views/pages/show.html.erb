@@ -1,11 +1,11 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, 'Friend') %>
 <div class="">
 	<% if log_in? %>
 	<div>
-		<%= render 'shared/feed' %>
+		<%= render 'shared/friend' %>
 	</div>
 	<% else %>
-		<h1>Welcome!</h1>
+		<h1>Please login.</h1>
 		<%= link_to "login", signin_path %>
 	<% end %>
 </div>
