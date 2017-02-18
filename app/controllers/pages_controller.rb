@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 			$current_user = vk.users.get(uid: session[:vk_id], 
 										fields: [:screen_name, :photo, :counters]).first
 			$friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
-			$photos = vk.photos.get(uid: session[:vk_id], album_id: 'saved')
+			$photos = vk.photos.get(uid: session[:vk_id], album_id: 'saved', rev: 1)
 		end
 	end
 
@@ -28,7 +28,7 @@ class PagesController < ApplicationController
 		vk = VkontakteApi::Client.new(session[:token])
 		friend_id = params[:id]
 		@friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
-		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved')
+		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1)
 		@albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 		items = @albums.items
 			items.each do |item|
