@@ -33,14 +33,14 @@ class PagesController < ApplicationController
 			session[:token] = cookies[:token] if !session[:token].present?
 			vk = VkontakteApi::Client.new(session[:token])
 			friend_id = params[:id]
-			@friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
+			$friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
 			@albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 			items = @albums.items
 				items.each do |item|
 					@check = 1 if item.has_value?(-15)
 				end
 			if @check.present?
-				@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1)
+				$friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1)
 			else
 				redirect_to root_url
 				flash[:danger] = "Пользователь ограничил доступ к фотографиям."
