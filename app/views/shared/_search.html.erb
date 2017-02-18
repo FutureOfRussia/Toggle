@@ -1,4 +1,4 @@
-<% $search_friends.items.each do |item| %>
+<% @search_friends.items.each do |item| %>
 	<% if item.check != true %>
 		<li>
 			<a href='/pages/<%= "#{item.id}" %>'>

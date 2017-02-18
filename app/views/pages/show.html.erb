@@ -1,6 +1,6 @@
 <% provide(:title, "Friend") %>
 <div class="col-sm-9">
-	<% $friend_photos.items.each do |item| %>
+	<% @friend_photos.items.each do |item| %>
 		<tr>
 			<td>
 				<img src="<%= "#{item.photo_604}" %>">

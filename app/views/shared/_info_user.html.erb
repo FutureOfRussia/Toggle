@@ -20,21 +20,21 @@
 		
 		<div class="dropdown drop">
 			<a href="#" class="dropdown-toggle inf-name" data-toggle="dropdown" role="button">
-				<%= "#{$current_user.first_name}" %>
+				<%= "#{@current_user.first_name}" %>
 			</a>
 			<ul class="dropdown-menu">
-	    		<li><%= link_to "Ваш профиль", vk_url($current_user), target: '_blank' %></li>
+	    		<li><%= link_to "Ваш профиль", vk_url(@current_user), target: '_blank' %></li>
 	    		<li><%= link_to "Выход", signout_path, method: :delete %></li>
 	    	</ul>
 	    </div>
 
 	    <div class="inf">
-			Фото: <%= "#{$photos.first.last}" %>
+			Фото: <%= "#{@photos.first.last}" %>
 	    </div>
 
 		<div class="dropdown drop">
      		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-			Друзья: <%= $current_user.counters.friends %> 
+			Друзья: <%= @current_user.counters.friends %> 
      		</a>
         		<ul class="dropdown-menu">
      				<%= render 'shared/friends_form' %>
