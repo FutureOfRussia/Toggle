@@ -44,7 +44,6 @@ class PagesController < ApplicationController
 
 	def check_saved?
 		items = @friend_albums.items
-		saved = items.find_by[id: -15]
-		saved.present?
+		saved.include?(id: -15)
 	end 
 end
