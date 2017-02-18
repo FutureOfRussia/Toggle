@@ -1,6 +1,5 @@
-<% provide(:title, "Friend") %>
+<% provide(:title, full_name(@friend)) %>
 <div class="col-sm-9">
-<%= "#{@friend}" %> 
 	<% @friend_photos.items.each do |item| %>
 		<tr>
 			<td>
