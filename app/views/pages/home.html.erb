@@ -1,11 +1,11 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, full_name(@current_user)) %>
 <% if log_in? %>
 	<div class="col-sm-9">
 		<div class="">
 			<% @photos.items.each do |item| %>
 				<tr>
 					<td>
-						<img src="<%= "#{item.photo_604}" %>">
+						<img src="<%= item.photo_604 %>">
 					</td>
 				</tr>
 			<% end %>
