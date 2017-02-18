@@ -1,19 +1,20 @@
 <% provide(:title, 'Home') %>
-<div class="">
-	<% if log_in? %>
-		<div>
-			<div class="">
-				<% $photos.items.each do |item| %>
-					<tr>
-						<td>
-							<img src="<%= "#{item.photo_604}" %>">
-						</td>
-					</tr>
-				<% end %>
-			</div>
+<% if log_in? %>
+	<div class="col-sm-9">
+		<div class="">
+			<% $photos.items.each do |item| %>
+				<tr>
+					<td>
+						<img src="<%= "#{item.photo_604}" %>">
+					</td>
+				</tr>
+			<% end %>
 		</div>
-	<% else %>
-		<h1>Welcome!</h1>
-		<%= link_to "login", signin_path %>
-	<% end %>
-</div>
+	</div>
+	<div class="col-sm-3">
+		<%= render 'shared/info_user' %>
+	</div>
+<% else %>
+	<h1>Welcome!</h1>
+	<%= link_to "login", signin_path %>
+<% end %>

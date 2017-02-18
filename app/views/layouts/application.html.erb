@@ -22,21 +22,9 @@
 
       <% if log_in? %> 
 
-      <div class="row">
-
-        <!-- Content -->
-
-        <div class="col-sm-9 cont"><%= yield %></div>
-
-        <!-- Info -->
-
-        <div class="col-sm-3 info-align"><%= render 'layouts/info' %></div>
-
-      </div>
-
-      <!-- Footer -->
-
-      <%= render 'layouts/footer' %>
+        <div class="row">
+          <%= yield %>
+        </div>
 
       <% else %>
 
@@ -47,6 +35,10 @@
         </div>
 
       <% end %>
+
+      <!-- Footer -->
+
+      <%= render 'layouts/footer' %>
 
     </div>
 

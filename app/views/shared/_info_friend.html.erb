@@ -1,0 +1,37 @@
+<!-- Logo -->
+
+<div class="row">
+	<div class="logo">TOGGLE</div>
+</div>
+
+<!-- Br -->
+
+<div class="row">
+	<div class="br"></div>
+</div>
+
+<!-- User Info -->
+
+<div class="row">
+
+	<!-- Info -->
+
+	<div class="col-sm-8 info">
+		
+		<div class="drop inf-name">
+			<%= "#{@friend.first_name}" %>
+	    </div>
+
+	    <div class="inf">
+			Фото: <%= "#{@friend_photos.first.last}" %>
+	    </div>
+
+	</div>
+		
+	<!-- Photo -->
+
+	<div class="col-sm-4 avt-pd">
+		<%= link_to image_tag(friend.photo, class: 'avt img-circle'), '#' %>
+	</div>
+
+</div>
