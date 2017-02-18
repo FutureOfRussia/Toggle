@@ -37,9 +37,9 @@ class PagesController < ApplicationController
 			@albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 			items = @albums.items
 				items.each do |item|
-					@check = true if item.has_value?(-15)
+					@check = 1 if item.has_value?(-15)
 				end
-			if @check != true
+			if @check.present?
 				@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1)
 			else
 				redirect_to root_url
