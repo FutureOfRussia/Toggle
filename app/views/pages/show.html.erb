@@ -1,11 +1,10 @@
-<% provide(:title, 'Friend') %>
+<% provide(:title, "<%= '#{user.first_name} #{user.last_name}' %>") %>
 <div class="">
-	<% if log_in? %>
-	<div>
-		<%= render 'shared/friend' %>
-	</div>
-	<% else %>
-		<h1>Please login.</h1>
-		<%= link_to "login", signin_path %>
+	<% @friend_photos.items.each do |item| %>
+		<tr>
+			<td>
+				<img src="<%= "#{item.photo_604}" %>">
+			</td>
+		</tr>
 	<% end %>
 </div>
