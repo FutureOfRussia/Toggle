@@ -1,15 +1,9 @@
 <div class="">
-<% if @saved_error.present? %>
-	<div class="alert alert-danger">
-		Error
-	</div>
-<% else %>
-	<% @friend_photos.items.each do |item| %>
-		<tr>
-			<td>
-				<img src="<%= "#{item.photo_604}" %>">
-			</td>
-		</tr>
-	<% end %>
+<% @friend_photos.items.each do |item| %>
+	<tr>
+		<td>
+			<img src="<%= "#{item.photo_604}" %>">
+		</td>
+	</tr>
 <% end %>
 </div>

@@ -1,8 +1,10 @@
 <% $search_friends.items.each do |item| %>
-	<li>
-		<a href='/pages/<%= "#{item.id}" %>'>
-			<div class="friends-name"><%= full_name(item) %></div>
-			<div class="friends-img"><%= image_tag(item.photo, class: 'img-circle') %></div>
-		</a>
-	</li>
+	<% if item.check != true %>
+		<li>
+			<a href='/pages/<%= "#{item.id}" %>'>
+				<div class="friends-name"><%= full_name(item) %></div>
+				<div class="friends-img"><%= image_tag(item.photo, class: 'img-circle') %></div>
+			</a>
+		</li>
+	<% end %>
 <% end %>
