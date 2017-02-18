@@ -44,7 +44,7 @@ class PagesController < ApplicationController
 	def check_saved
 		@items = @friend_albums.items
 		@items.each do |item|
-			@check = 1 if item.include?(id: -15)
+			@check = 1 if item.include?(-15)
 		end
 	end 
 
