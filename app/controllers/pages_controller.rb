@@ -43,7 +43,7 @@ class PagesController < ApplicationController
 	private
 
 	def check_saved?
-		saved = @friend_albums.items.find_by(id: -15)
+		saved = @friend_albums.find_by(id: -15)
 		saved.present?
 	end 
 end
