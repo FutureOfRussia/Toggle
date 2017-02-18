@@ -20,10 +20,18 @@
 		
 		<div class="drop inf-name">
 			<%= @friend.first_name %>
+			<%= link_to vk_url(@friend), target: '_blank' do %>
+				<span class="glyphicon glyphicon-user"></span>
+			<% end %>
 	    </div>
 
 	    <div class="inf">
 			Фото: <%= @friend_photos.first.last %>
+	    </div>
+	    <div class="drop">
+	    	<%= link_to root_url do %>
+				<span class="glyphicon glyphicon-share-alt">Назад</span>
+			<% end %>
 	    </div>
 
 	</div>
