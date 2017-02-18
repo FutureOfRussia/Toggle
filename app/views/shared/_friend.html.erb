@@ -1,4 +1,7 @@
 <div class="">
+<% if @friend_photos.error.present? %>
+	<%= "#{@friend_photos.error_msg}" %>
+<% else %>
 	<% @friend_photos.items.each do |item| %>
 		<tr>
 			<td>
@@ -6,4 +9,5 @@
 			</td>
 		</tr>
 	<% end %>
+<% end %>
 </div>

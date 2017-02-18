@@ -32,5 +32,6 @@ class PagesController < ApplicationController
 		vk = VkontakteApi::Client.new(session[:token])
 		@friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
 		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved')
+		
 	end
 end
