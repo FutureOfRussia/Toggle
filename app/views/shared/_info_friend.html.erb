@@ -29,8 +29,8 @@
 			Фото: <%= @friend_photos.first.last %>
 	    </div>
 	    <div class="drop">
-	    	<%= link_to root_url do %>
-				<span class="glyphicon glyphicon-share-alt">Назад</span>
+	    	<%= link_to "Назад" root_url do %>
+				<span class="glyphicon glyphicon-share-alt"></span>
 			<% end %>
 	    </div>
 
@@ -39,7 +39,7 @@
 	<!-- Photo -->
 
 	<div class="col-sm-4 avt-pd">
-		<%= link_to image_tag(@friend.photo, class: 'avt img-circle'), '#' %>
+		<%= image_tag(@friend.photo, class: 'avt img-circle') %>
 	</div>
 
 </div>
