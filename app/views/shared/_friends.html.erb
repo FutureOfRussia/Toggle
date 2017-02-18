@@ -1,6 +1,6 @@
 <% @friends.items.each do |item| %>
 	<li>
-		<a href='#'>
+		<a href='/pages/<%= "#{item.id}" %>' remote: true >
 			<div class="friends-name"><%= full_name(item) %></div>
 			<div class="friends-img"><%= image_tag(item.photo, class: 'img-circle') %></div>
 		</a>

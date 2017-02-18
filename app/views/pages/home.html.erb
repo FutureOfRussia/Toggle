@@ -1,7 +1,9 @@
 <% provide(:title, 'Home') %>
 <div class="">
 	<% if log_in? %>
+	<div id="show">
 		<%= render 'shared/feed' %>
+	</div>
 	<% else %>
 		<h1>Welcome!</h1>
 		<%= link_to "login", signin_path %>
