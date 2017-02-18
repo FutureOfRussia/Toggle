@@ -33,7 +33,7 @@ class PagesController < ApplicationController
 			session[:token] = cookies[:token] if !session[:token].present?
 			vk = VkontakteApi::Client.new(session[:token])
 			friend_id = params[:id]
-			@friend = vk.users.get(user_ids: friend_id, fields: [:screen_name, :name, :photo])
+			@friend = vk.users.get(user_ids: friend_id, fields: [:screen_name, :name, :photo]).first
 			albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 			items = albums.items
 				items.each do |item|
