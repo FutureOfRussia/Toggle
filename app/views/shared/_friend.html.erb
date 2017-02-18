@@ -1,9 +1,15 @@
 <div class="">
-<% @friend_photos.items.each do |item| %>
-	<tr>
-		<td>
-			<img src="<%= "#{item.photo_604}" %>">
-		</td>
-	</tr>
+<% if @check != true %>
+	<div class="alert alert-danger">
+		Error
+	</div>
+<% else %>
+	<% @friend_photos.items.each do |item| %>
+		<tr>
+			<td>
+				<img src="<%= "#{item.photo_604}" %>">
+			</td>
+		</tr>
+	<% end %>
 <% end %>
 </div>
