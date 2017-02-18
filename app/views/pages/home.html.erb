@@ -1,15 +1,7 @@
 <% provide(:title, 'Home') %>
 <div class="">
 	<% if log_in? %>
-		<div class="">
-			<% @photos.items.each do |item| %>
-				<tr>
-					<td>
-						<img src="<%= "#{item.photo_604}" %>">
-					</td>
-				</tr>
-			<% end %>
-		</div>
+		<%= render 'shared/feed' %>
 	<% else %>
 		<h1>Welcome!</h1>
 		<%= link_to "login", signin_path %>
