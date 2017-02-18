@@ -16,9 +16,9 @@ class PagesController < ApplicationController
 				@albums = @vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 				@items = @albums.items
 				@items.each do |item|
-					ch = true if item.has_value?(-15)
+					@ch = true if item.has_value?(-15)
 				end
-				item[:check] = true if ch != true
+				item[:check] = true if @ch != true
 			end
 
 			$photos = @vk.photos.get(uid: session[:vk_id], album_id: 'saved')
