@@ -19,10 +19,16 @@ class PagesController < ApplicationController
 	end
 
 	def show
-		init_user if !$current_user.present?
+		if !$current_user.present?
+			init_user 
+		else
+			vk = VkontakteApi::Client.new(session[:token])
+		end
+
 		friend_id = params[:id]
 		@friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
 		@friend_albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
+		
 		if check_saved?
 			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved') if check_saved?
 		else
