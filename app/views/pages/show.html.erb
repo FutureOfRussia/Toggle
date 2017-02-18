@@ -1,10 +1,9 @@
-<% provide(:title, ) %>
+<% provide(:title, full_name(@friend) ) %>
 <div class="col-sm-9">
-<%= @friend.first_name %>
 	<% @friend_photos.items.each do |item| %>
 		<tr>
 			<td>
-				<img src="<%= "#{item.photo_604}" %>">
+				<img src="<%= item.photo_604 %>">
 			</td>
 		</tr>
 	<% end %>
