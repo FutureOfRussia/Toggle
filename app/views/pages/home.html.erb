@@ -1,5 +1,5 @@
-<% provide(:title, full_name(@current_user) if log_in?) %>
 <% if log_in? %>
+	<% provide(:title, full_name(@current_user)) %>
 	<div class="col-sm-9">
 		<div class="cont">
 			<% @photos.items.each do |item| %>
