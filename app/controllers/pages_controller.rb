@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
 
+	def index
+	end
+
 	def home
 		if log_in?
 
@@ -7,9 +10,12 @@ class PagesController < ApplicationController
 				
 			vk = VkontakteApi::Client.new(session[:token])
 
-			@user = vk.users.get(uid: session[:vk_id], fields: [:screen_name, :photo, :counters]).first
+			@current_user = vk.users.get(uid: session[:vk_id], 
+										fields: [:screen_name, :photo, :counters]).first
+
 			@friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
-			@photos = vk.photos.get(owner_id: 78141952, album_id: 'saved')
+			
+			@photos = vk.photos.get(owner_id: session[:vk_id], album_id: 'saved')
 
 		end
 	end
@@ -23,6 +29,10 @@ class PagesController < ApplicationController
 		end	
 	end
 
-	def index
+	def show
+		friend_id = params[:id]
+		vk = VkontakteApi::Client.new(session[:token])
+		@friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
+		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved')
 	end
 end

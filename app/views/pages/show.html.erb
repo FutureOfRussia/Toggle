@@ -1,0 +1,17 @@
+<% provide(:title, full_name(friend)) %>
+<div class="">
+	<% if log_in? %>
+		<div class="">
+			<% @friend_photos.items.each do |item| %>
+				<tr>
+					<td>
+						<img src="<%= "#{item.photo_604}" %>">
+					</td>
+				</tr>
+			<% end %>
+		</div>
+	<% else %>
+		<h1>Welcome!</h1>
+		<%= link_to "login", signin_path %>
+	<% end %>
+</div>
