@@ -41,7 +41,7 @@ class PagesController < ApplicationController
 
 	def check_saved?
 		@items = @friend_albums.items
-		@items.include?(id: -15)
+		@items.include?(-15)
 	end 
 
 	def init_user
