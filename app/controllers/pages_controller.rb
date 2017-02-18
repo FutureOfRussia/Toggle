@@ -31,7 +31,7 @@ class PagesController < ApplicationController
 		@friend_albums = @vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 		
 		check_saved
-		if check.present?
+		if @check.present?
 			@friend_photos = @vk.photos.get(owner_id: friend_id, album_id: 'saved')
 		else
 			@saved_error = 1
@@ -44,7 +44,7 @@ class PagesController < ApplicationController
 	def check_saved
 		@items = @friend_albums.items
 		@items.each do |item|
-			check = 1 if item.include?(id: -15)
+			@check = 1 if item.include?(id: -15)
 		end
 	end 
 
