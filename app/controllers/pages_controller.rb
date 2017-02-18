@@ -5,6 +5,8 @@ class PagesController < ApplicationController
 
 	def home
 		if log_in?
+			session[:token] = cookies[:token] if !session[:token].present?
+			vk = VkontakteApi::Client.new(session[:token])
 			init_user
 		end
 	end
@@ -19,18 +21,18 @@ class PagesController < ApplicationController
 	end
 
 	def show
-		if !$current_user.present?
-			init_user 
-		else
-			vk = VkontakteApi::Client.new(session[:token])
-		end
+		session[:token] = cookies[:token] if !session[:token].present?
+		vk = VkontakteApi::Client.new(session[:token])
+
+		init_user if !$current_user.present?
 
 		friend_id = params[:id]
 		@friend = vk.users.get(uid: friend_id, fields: [:screen_name, :name, :photo])
 		@friend_albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 		
-		if check_saved?
-			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved') if check_saved?
+		check_saved
+		if check.present?
+			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved')
 		else
 			@saved_error = 1
 		end
@@ -39,14 +41,14 @@ class PagesController < ApplicationController
 
 	private
 
-	def check_saved?
+	def check_saved
 		@items = @friend_albums.items
-		@items.include?(-15)
+		@items.each do |item|
+			check = 1 if item.include?(id: -15)
+		end
 	end 
 
 	def init_user
-		session[:token] = cookies[:token] if !session[:token].present?
-		vk = VkontakteApi::Client.new(session[:token])
 		$current_user = vk.users.get(uid: session[:vk_id], 
 										fields: [:screen_name, :photo, :counters]).first
 		$friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
