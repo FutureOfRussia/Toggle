@@ -1,4 +1,4 @@
-<% provide(:title, full_name(@friend)) %>
+<% provide(:title, "#{@friend.first_name} #{@friend.last_name}" %>
 <div class="">
 	<% if log_in? %>
 		<div class="">
