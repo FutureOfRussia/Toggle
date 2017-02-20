@@ -1,146 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-	font-family: 'Roboto', sans-serif;
-}
-
-a {
-	color: rgba(0,0,0,0.8);
-	&:hover {
-		color: rgba(0,0,0,0.4);
-		text-decoration: none;
-	}
-	&:focus {
-		text-decoration: none;
-		color: rgba(0,0,0,0.8);
-	}
-}
-
-/* content */
-
-.cont {
-	margin-top: 15px;
-	text-align: center;
-}
-
-/* info */
-
-.info-align {
-	text-align: center;
-	margin-top: 60px; 
-}
-
-.logo {
-	margin-top: 5px;
-	margin-bottom: 5px;
-	text-align: center;
-	font-size: 36px;
-	padding-top: 5px;
-	font-family: 'Raleway', sans-serif;
-}
-
-.br {
-	border-bottom: 1px solid rgba(0,0,0,0.4);
-	margin: 0 30px 20px 25px;
-}
-
-.drop {
-	margin-left: 15px;
-	text-align: left;
-}
-
-.inf {
-	margin-top: 5px;
-	margin-left: 15px;
-	text-align: left;
-}
-
-.inf-name {
-	font-size: 16px;
-	font-weight: 600;
-}
-
-.info {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.avt {
-	height: 60px;
-	width: 60px;
-}
-
-.avt-pd {
-	padding-left: 0;
-	padding-right: 0;
-	height: 67px;
-	padding-top: 4px;
-}
-
-.dropdown-menu {
-	padding: 0;
-}
-
-.dropdown-menu > .scroll > li > a {
-	padding: 18px 6px;
-	&:hover {
-		color: rgba(0,0,0,0.8);
-	}
-}
-
-.dropdown-menu > .scroll > li {
-	&:hover {
-		background-color: rgba(192,192,192,0.3);
-	}
-}
-
-.dropdown ul {
-	max-height: 500px;
-}
-
-.dropdown div {
-	max-height: 450px !important;
-}
-
-.scroll {
-	overflow-y: auto; 
-}
-
-.search {
-	width: 274px;
-}
-
-.form-control {
-	border-radius: 0;
-	border-top: none;
-	border-right: none;
-	border-left: none;
-}
-
-.friends-name {
-	display: inline-block;
-	width: 200px;
-}
-
-.friends-img {
-	display: inline-block;
-	margin-top: 2px;
-	margin-bottom: 2px;
-}
-
-/* footer */
-
-footer {
-	margin-top: 45px;
-	padding-top: 5px;
-	border-top: 1px solid rgba(0,0,0,0.4);
-}
-
 /* Scrollbar */
 
 ::-webkit-scrollbar {
-	width: 8px;
+	width: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -153,12 +17,66 @@ footer {
 	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.5);
 }
 
+/* Logo */
 
-.login {
-	&:active {
-		box-shadow: none;
-	}
-	&:hover {
-		color: rgba(0,0,0,0.2);
-	}
+.logo {
+
+}
+
+/* Friends list */
+
+.friends-list {
+
+}
+
+.search {
+
+}
+
+.friends-block {
+
+}
+
+.friend-block {
+
+}
+
+.friend-name {
+
+}
+
+.friend-img {
+
+}
+
+/* Info block */
+
+.info-block {
+
+}
+
+.info-img {
+
+}
+
+.info-links {
+
+}
+
+.info-name {
+
+}
+
+.info-count {
+
+}
+
+/* Content */
+
+.content {
+
+}
+
+.cont-block {
+
 }

@@ -1,12 +1,32 @@
-<div class="col-sm-9 cont">
-	<% $photos.items.each do |item| %>
-		<tr>
-			<td>
-				<img src="<%= item.photo_604 %>">
-			</td>
-		</tr>
-	<% end %>
-</div>
-<div class="col-sm-3">
-	<%= render 'shared/info_user' %>
+<div class="row">
+	<div class="col-sm-4 info-block">
+		<div class="row">
+			<div class="col-sm-4 info-img">
+				<%= image_tag($current_user.photo, class: 'img-circle') %>
+			</div>
+			<div class="col-sm-8 info-links">
+				<div class="row">
+					<div>
+						<%= link_to vk_url($current_user), target: '_blank' do %>
+							<span class="glyphicon glyphicon-user"></span>
+						<% end %>
+						<span class="info-name"><%= $current_user.first_name %></span>
+	    				<%= link_to signout_path, method: :delete do %>
+	    					<span class="glyphicon glyphicon-log-out"></span>
+	    				<% end %>
+					</div>
+					<div>
+						<span class="info-count">Фото: <%= $photos.first.last %></span>
+					</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="col-sm-12 content">		
+		<% $photos.items.each do |item| %>
+			<div class="cont-block">
+				<img src="<%= item.photo_807 %>">
+			</div>
+		<% end %>
+	</div>
 </div>

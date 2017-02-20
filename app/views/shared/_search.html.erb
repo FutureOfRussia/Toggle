@@ -1,8 +1,6 @@
 <% $search_friends.items.each do |item| %>
-	<li>
-		<a href='/pages/<%= item.id %>' data-remote="true">
-			<div class="friends-name"><%= full_name(item) %></div>
-			<div class="friends-img"><%= image_tag(item.photo, class: 'img-circle') %></div>
-		</a>
-	</li>
+	<a href='/pages/<%= item.id %>' data-remote="true" class="friend-block">
+			<div class="friend-name"><%= full_name(item) %></div>
+			<div class="friend-img"><%= image_tag(item.photo, class: 'img-circle') %></div>
+	</a>
 <% end %>

@@ -1,18 +1,46 @@
-<div class="col-sm-9 cont">
-	<% if @check.present? %>
-		<% @friend_photos.items.each do |item| %>
-			<tr>
-				<td>
-					<img src="<%= item.photo_604 %>">
-				</td>
-			</tr>
+<div class="row">
+	<div class="col-sm-4 info-block">
+		<div class="row">
+			<div class="col-sm-4 info-img">
+				<%= image_tag(@friend.photo, class: 'img-circle') %>
+			</div>
+			<div class="col-sm-8 info-links">
+				<div class="row">
+					<div>
+						<%= link_to vk_url(@friend), target: '_blank' do %>
+							<span class="glyphicon glyphicon-user"></span>
+						<% end %>
+						<span class="info-name"><%= @friend.first_name %></span>
+	    				<%= link_to signout_path, method: :delete do %>
+	    					<span class="glyphicon glyphicon-log-out"></span>
+	    				<% end %>
+	    				<a href="/back" data-remote="true">
+	    					<span class="glyphicon glyphicon-home"></span>
+					</div>
+					<div>
+						<span class="info-count">Фото:
+							<% if @check.present? %> 
+								<%= @friend_photos.first.last %>
+							<% else %>
+								Ограничено
+							<% end %>
+						</span>
+					</div>
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="col-sm-12 content">		
+		<% if @check.present? %>
+			<% @friend_photos.items.each do |item| %>
+				<div class="cont-block">
+					<img src="<%= item.photo_807 %>">
+				</div>
+			<% end %>
+		<% else %>
+			<div class="alert alert-danger">
+				Пользователь ограничил доступ к фотографиям.
+			</div>
 		<% end %>
-	<% else %>
-		<div class="alert alert-danger">
-			Пользователь ограничил доступ к фотографиям.
-		</div>
-	<% end %>
-</div>
-<div class="col-sm-3">
-	<%= render 'shared/info_friend' %>
+	</div>
 </div>
