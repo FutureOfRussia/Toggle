@@ -28,26 +28,28 @@ class PagesController < ApplicationController
 	end
 
 	def show
-		if log_in?
-			session[:token] = cookies[:token] if !session[:token].present?
-			vk = VkontakteApi::Client.new(session[:token])
-			friend_id = params[:id]
-			@friend = vk.users.get(user_ids: friend_id, fields: [:screen_name, :name, :photo]).first
-			albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
-			items = albums.items
-				items.each do |item|
-					@check = 1 if item.has_value?(-15)
-				end
-			if @check.present?
-				@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1)
-			else
-				flash[:danger] = "Пользователь ограничил доступ к фотографиям."
+		session[:token] = cookies[:token] if !session[:token].present?
+		vk = VkontakteApi::Client.new(session[:token])
+		friend_id = params[:id]
+		@friend = vk.users.get(user_ids: friend_id, fields: [:screen_name, :name, :photo]).first
+		albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
+		items = albums.items
+			items.each do |item|
+				@check = 1 if item.has_value?(-15)
 			end
-			respond_to do |format|
-				format.js
-			end
+		if @check.present?
+			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1)
 		else
+			flash[:danger] = "Пользователь ограничил доступ к фотографиям."
 			redirect_to root_url
 		end
+		respond_to do |format|
+			format.js
+		end
 	end
+
+	def back
+
+	end
+
 end
