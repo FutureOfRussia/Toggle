@@ -1,8 +1,8 @@
 VkontakteApi.configure do |config|
   # Authorization parameters (not needed when using an external authorization):
-  config.app_id       = '5885713'
-  config.app_secret   = 'jCiavFrtdDpDXOgrMq2h'
-  config.redirect_uri = 'http://api.vkontakte.ru/blank.html' 
+  config.app_id       = '5873543'
+  config.app_secret   = 'tPUYl5F4aD2cXwcOumXf'
+  config.redirect_uri = 'https://fortoggle.herokuapp.com/callback' 
   
   # Faraday adapter to make requests with:
   config.adapter = :net_http
