@@ -30,19 +30,13 @@ class PagesController < ApplicationController
 	def show
 		session[:token] = cookies[:token] if !session[:token].present?
 		vk = VkontakteApi::Client.new(session[:token])
-		friend_id = nil
 		friend_id = params[:id]
-		@friend = nil
 		@friend = vk.users.get(user_ids: friend_id, fields: [:screen_name, :name, :photo]).first
-		albums = nil
 		albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
-		items = nil
 		items = albums.items
-		@check = nil
 			items.each do |item|
 				@check = 1 if item.has_value?(-15)
 			end
-		@friend_photos = nil
 		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1) if @check.present?
 		respond_to do |format|
 			format.js

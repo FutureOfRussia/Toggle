@@ -1,11 +1,11 @@
 <div class="col-sm-9 cont">
-	<% if @check.present? %>
+	<% if !@check.present? %>
 		<div class="alert alert-danger">
-			Пользователь не ограничил доступ к фотографиям.
+			Пользователь ограничил доступ к фотографиям.
 		</div>
 	<% else %>
 		<div class="alert alert-danger">
-			Пользователь ограничил доступ к фотографиям.
+			Пользователь не ограничил доступ к фотографиям.
 		</div>
 	<% end %>
 </div>
