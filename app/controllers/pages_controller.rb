@@ -49,7 +49,7 @@ class PagesController < ApplicationController
 			end
 
 		if @check.present?
-			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1) 
+			@friend_photos = vk.photos.get(owner_id: @friend_id, album_id: 'saved', rev: 1) 
 		end
 
 		respond_to do |format|
