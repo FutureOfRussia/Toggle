@@ -37,9 +37,9 @@ class PagesController < ApplicationController
 		end
 
 		vk = VkontakteApi::Client.new(session[:token])
-		friend_id = params[:id]
-		@friend = vk.users.get(user_ids: friend_id, fields: [:screen_name, :name, :photo]).first
-		albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
+		@friend_id = params[:id]
+		@friend = vk.users.get(user_ids: @friend_id, fields: [:screen_name, :name, :photo]).first
+		albums = vk.photos.getAlbums(owner_id: @friend_id, need_system: 1)
 		items = albums.items
 
 			items.each do |item|
@@ -63,4 +63,27 @@ class PagesController < ApplicationController
 		end
 	end
 
+	def fave
+		if !session[:token].present?
+			session[:token] = cookies[:token]
+		end
+
+		vk = VkontakteApi::Client.new(session[:token])
+		add_fave = vk.fave.add_User(@friend_id)
+		respond_to do |format|
+			format.js
+		end
+	end
+
+	def unfave
+		if !session[:token].present?
+			session[:token] = cookies[:token]
+		end
+
+		vk = VkontakteApi::Client.new(session[:token])
+		remove_fave = vk.fave.remove_User(@friend_id)
+		respond_to do |format|
+			format.js
+		end
+	end
 end
