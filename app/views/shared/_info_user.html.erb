@@ -19,8 +19,8 @@
 	<div class="col-sm-8 info">
 		
 		<div class="drop inf-name">
-			<%= @current_user.first_name %>
-			<%= link_to vk_url(@current_user), target: '_blank' do %>
+			<%= $current_user.first_name %>
+			<%= link_to vk_url($current_user), target: '_blank' do %>
 				<span class="glyphicon glyphicon-user"></span>
 			<% end %>
 	    	<%= link_to signout_path, method: :delete do %>
@@ -29,12 +29,12 @@
 	    </div>
 
 	    <div class="inf">
-			Фото: <%= @photos.first.last %>
+			Фото: <%= $photos.first.last %>
 	    </div>
 
 		<div class="dropdown drop">
      		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-			Друзья: <%= @current_user.counters.friends %> 
+			Друзья: <%= $current_user.counters.friends %> 
      		</a>
         		<ul class="dropdown-menu">
      				<%= render 'shared/friends_form' %>
@@ -46,7 +46,7 @@
 	<!-- Photo -->
 
 	<div class="col-sm-4 avt-pd">
-		<%= image_tag(@current_user.photo, class: 'avt img-circle') %>
+		<%= image_tag($current_user.photo, class: 'avt img-circle') %>
 	</div>
 
 </div>
