@@ -12,5 +12,7 @@
 		<%= render 'shared/info_friend' %>
 	</div>
 <% else %>
-	<%= flash[:danger] = "Пользователь ограничил доступ к фотографиям." %>
+	<div class="alert alert-danger">
+		Пользователь ограничил доступ к фотографиям.
+	</div>
 <% end %>
