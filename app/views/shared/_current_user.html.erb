@@ -25,7 +25,12 @@
 	<div class="col-sm-12 content">		
 		<% $photos.items.each do |item| %>
 			<div class="cont-block">
-				<img src="<%= item.photo_807 %>">
+				<img src="<%= item.photo_604 %>">
+			</div>
+		<% end %>
+		<% if $photos.first.last > 200 %>
+			<div class="load-btn" id="load">
+				<a href="/load" data-remote="true">Загрузить еще...</a>
 			</div>
 		<% end %>
 	</div>
