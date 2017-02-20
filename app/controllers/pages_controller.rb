@@ -38,7 +38,7 @@ class PagesController < ApplicationController
 			items.each do |item|
 				@check = 1 if item.has_value?(-15)
 			end
-		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1) if @check == 1
+		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1) if @check > 0
 		respond_to do |format|
 			format.js
 		end
