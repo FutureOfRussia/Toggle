@@ -25,7 +25,6 @@ class PagesController < ApplicationController
 		else
 			redirect_to root_url
 		end
-
 	end
 
 	def show
@@ -44,6 +43,9 @@ class PagesController < ApplicationController
 			else
 				redirect_to root_url
 				flash[:danger] = "Пользователь ограничил доступ к фотографиям."
+			end
+			respond_to do |format|
+				format.js
 			end
 		else
 			redirect_to root_url
