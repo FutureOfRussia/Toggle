@@ -1,3 +1,18 @@
 <div class="col-sm-9 cont">
-	123
+	<% if @check.present? %>
+		<% @friend_photos.items.each do |item| %>
+			<tr>
+				<td>
+					<img src="<%= item.photo_604 %>">
+				</td>
+			</tr>
+		<% end %>
+	<% else %>
+		<div class="alert alert-danger">
+			Пользователь ограничил доступ к фотографиям.
+		</div>
+	<% end %>
+</div>
+<div class="col-sm-3">
+	<%= render 'shared/info_friend' %>
 </div>

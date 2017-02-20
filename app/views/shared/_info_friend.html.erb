@@ -26,7 +26,12 @@
 	    </div>
 
 	    <div class="inf">
-			Фото: <%= @friend_photos.first.last %>
+			Фото:
+			<% if @check.present? %> 
+				<%= @friend_photos.first.last %>
+			<% else %>
+			Ограничено
+			<% end %>
 	    </div>
 	    <div class="drop">
 	    	<%= link_to root_url do %>
