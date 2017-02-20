@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 			if !session[:token].present?
 				session[:token] = cookies[:token]
 			end
-			
+
 			vk = VkontakteApi::Client.new(session[:token])
 			@current_user = vk.users.get(user_ids: session[:vk_id], 
 										 fields: [:screen_name, :photo, :counters]).first
@@ -58,7 +58,9 @@ class PagesController < ApplicationController
 	end
 
 	def back
-
+		respond_to do |format|
+			format.js
+		end
 	end
 
 end

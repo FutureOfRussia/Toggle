@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   	match '/index', to: 'pages#index', via: 'get'
   	match '/search', to: 'pages#search', via: 'get'
+  	match '/back', to: 'pages#back', via: 'get'
 	match '/signin', to: 'sessions#new', via: 'get'
 	match '/callback', to: 'sessions#callback', via: 'get'
 	match '/signout', to: 'sessions#destroy', via: 'delete'
