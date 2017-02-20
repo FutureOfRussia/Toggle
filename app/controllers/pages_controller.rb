@@ -41,7 +41,6 @@ class PagesController < ApplicationController
 			if @check.present?
 				@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1)
 			else
-				redirect_to root_url
 				flash[:danger] = "Пользователь ограничил доступ к фотографиям."
 			end
 			respond_to do |format|
