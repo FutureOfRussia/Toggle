@@ -34,10 +34,11 @@ class PagesController < ApplicationController
 		@friend = vk.users.get(user_ids: friend_id, fields: [:screen_name, :name, :photo]).first
 		albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 		items = albums.items
+		@check = 0
 			items.each do |item|
 				@check = 1 if item.has_value?(-15)
 			end
-		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1) if @check.present?
+		@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1) if @check == 1
 		respond_to do |format|
 			format.js
 		end
