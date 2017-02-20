@@ -1,12 +1,16 @@
-<div class="col-sm-9 cont">
-	<% @friend_photos.items.each do |item| %>
-		<tr>
-			<td>
-				<img src="<%= item.photo_604 %>">
-			</td>
-		</tr>
-	<% end %>
-</div>
-<div class="col-sm-3">
-	<%= render 'shared/info_friend' %>
-</div>
+<% if @check.present? %>
+	<div class="col-sm-9 cont">
+		<% @friend_photos.items.each do |item| %>
+			<tr>
+				<td>
+					<img src="<%= item.photo_604 %>">
+				</td>
+			</tr>
+		<% end %>
+	</div>
+	<div class="col-sm-3">
+		<%= render 'shared/info_friend' %>
+	</div>
+<% else %>
+	<%= flash[:danger] = "Пользователь ограничил доступ к фотографиям." %>
+<% end %>
