@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 			vk = VkontakteApi::Client.new(session[:token])
 			$current_user = vk.users.get(fields: [:screen_name, :photo, :counters]).first
 			$friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
-			$photos = vk.photos.get(album_id: 'saved', rev: 1)
+			$photos = vk.photos.get(album_id: 'saved', rev: 1, count: 100)
 		end
 	end
 
@@ -48,7 +48,7 @@ class PagesController < ApplicationController
 			end
 
 		if @check.present?
-			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1) 
+			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1, count: 100) 
 		end
 
 		respond_to do |format|
