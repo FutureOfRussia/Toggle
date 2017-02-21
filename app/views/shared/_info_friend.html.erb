@@ -9,11 +9,6 @@
 	<a href="/back" data-remote="true" class="info-font">
 		<span class="glyphicon glyphicon-home"></span>
 	</a>
-	<span class="info-count glyphicon glyphicon-picture info-font"> Изображений:
-		<% if @check.present? %> 
-			<%= @friend_photos.first.last %>
-		<% else %>
-			Ограничено
-		<% end %>
-	</span>
+	<span class="glyphicon glyphicon-picture"></span>
+	<span class="info-font info-count">Изображений: <% if @check.present? %><%= @friend_photos.first.last %><% else %>Ограничено<% end %></span>
 </div>
