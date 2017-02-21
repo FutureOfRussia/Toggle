@@ -1,7 +1,7 @@
 <div class="content">		
 	<% $photos.items.each do |item| %>
 		<div class="cont-block">
-			<img src="<%= item.photo_604 %>">
+			<img src="<%= item.photo_604 %>" class="cont-img">
 		</div>
 	<% end %>
 	<% if $photos.first.last > 200 %>

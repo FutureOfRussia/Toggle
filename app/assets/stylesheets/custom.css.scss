@@ -132,9 +132,16 @@
 /* Content */
 
 .content {
-
+	text-align: center;
 }
 
 .cont-block {
+	margin-bottom: 15px;
+}
 
+.cont-img {
+	box-shadow: 0px 0px 20px 0px rgb(0,0,0);
+	&:hover {
+		box-shadow: 0px 0px 20px 5px #92b4eb;
+	}
 }
