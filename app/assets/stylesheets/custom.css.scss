@@ -24,7 +24,7 @@
 
 .br {
 	border-bottom: 3px solid;
-	margin: -5px 60px 30px 60px;
+	margin: -5px 60px 50px 60px;
 }
 
 /* Logo */
@@ -67,6 +67,7 @@
 	&:hover {
 		text-decoration: none;
 		background-color: #eeeeee;
+		color: #090909;
 	}
 	&:focus {
 		text-decoration: none;

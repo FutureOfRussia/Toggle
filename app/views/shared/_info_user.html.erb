@@ -1,5 +1,5 @@
-<div class="info-img">
-	<%= image_tag($current_user.photo, class: 'img-circle') %>
+<div>
+	<%= image_tag($current_user.photo, class: 'info-img img-circle') %>
 </div>
 <div class="info-links">
 	<%= link_to vk_url($current_user), target: '_blank' do %>
