@@ -1,27 +1,19 @@
-<div class="row">
-	<div class="col-sm-4 info-img">
-		<%= image_tag(@friend.photo, class: 'img-circle') %>
-	</div>
-	<div class="col-sm-8 info-links">
-		<div class="row">
-			<div>
-				<%= link_to vk_url(@friend), target: '_blank' do %>
-					<span class="glyphicon glyphicon-user"></span>
-				<% end %>
-				<span class="info-name"><%= @friend.first_name %></span>
-				<a href="/back" data-remote="true">
-					<span class="glyphicon glyphicon-home"></span>
-				</a>
-			</div>
-			<div>
-				<span class="info-count glyphicon glyphicon-picture">Изображений:
-					<% if @check.present? %> 
-						<%= @friend_photos.first.last %>
-					<% else %>
-						Ограничено
-					<% end %>
-				</span>
-			</div>
-		</div>
-	</div>
+<div class="info-img">
+	<%= image_tag(@friend.photo, class: 'img-circle') %>
+</div>
+<div class="info-links">
+	<%= link_to vk_url(@friend), target: '_blank' do %>
+		<span class="glyphicon glyphicon-user"></span>
+	<% end %>
+	<span class="info-name"><%= @friend.first_name %></span>
+	<a href="/back" data-remote="true">
+		<span class="glyphicon glyphicon-home"></span>
+	</a>
+	<span class="info-count glyphicon glyphicon-picture"> Изображений:
+		<% if @check.present? %> 
+			<%= @friend_photos.first.last %>
+		<% else %>
+			Ограничено
+		<% end %>
+	</span>
 </div>
