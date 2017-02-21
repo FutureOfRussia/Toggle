@@ -2,14 +2,14 @@
 	<%= image_tag($current_user.photo, class: 'info-img img-circle') %>
 </div>
 <div class="info-links">
-	<%= link_to vk_url($current_user), target: '_blank' do %>
+	<%= link_to vk_url($current_user), target: '_blank', class: 'info-font' do %>
 		<span class="glyphicon glyphicon-user"></span>
 	<% end %>
-		<span class="info-name"><%= $current_user.first_name %></span>
-   	<%= link_to signout_path, method: :delete do %>
+		<span class="info-name info-font"><%= $current_user.first_name %></span>
+   	<%= link_to signout_path, method: :delete, class: 'info-font' do %>
    		<span class="glyphicon glyphicon-log-out"></span>
   	<% end %>
-	<span class="info-count glyphicon glyphicon-picture"> Изображений: 
+	<span class="info-count glyphicon glyphicon-picture info-font"> Изображений: 
 		<%= $photos.first.last %>
 	</span>
 </div>

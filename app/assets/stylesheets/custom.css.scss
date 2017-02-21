@@ -89,15 +89,16 @@
 /* Info block */
 
 .info-block {
-
+	display: flex;
 }
 
 .info-img {
-
+	width: 60px;
+	height: 60px;
 }
 
 .info-links {
-
+	padding: 8px 0px 0px 10px;
 }
 
 .info-name {
@@ -106,6 +107,11 @@
 
 .info-count {
 
+}
+
+.info-font {
+	color: #090909;
+	font-family: 'Roboto';
 }
 
 /* Content */

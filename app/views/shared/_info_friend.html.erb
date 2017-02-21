@@ -2,14 +2,14 @@
 	<%= image_tag(@friend.photo, class: 'info-img img-circle') %>
 </div>
 <div class="info-links">
-	<%= link_to vk_url(@friend), target: '_blank' do %>
+	<%= link_to vk_url(@friend), target: '_blank', class: 'info-font' do %>
 		<span class="glyphicon glyphicon-user"></span>
 	<% end %>
-	<span class="info-name"><%= @friend.first_name %></span>
-	<a href="/back" data-remote="true">
+	<span class="info-name info-font"><%= @friend.first_name %></span>
+	<a href="/back" data-remote="true" class="info-font">
 		<span class="glyphicon glyphicon-home"></span>
 	</a>
-	<span class="info-count glyphicon glyphicon-picture"> Изображений:
+	<span class="info-count glyphicon glyphicon-picture info-font"> Изображений:
 		<% if @check.present? %> 
 			<%= @friend_photos.first.last %>
 		<% else %>
