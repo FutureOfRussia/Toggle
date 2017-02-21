@@ -24,7 +24,7 @@
 
 .br {
 	border-bottom: 3px solid;
-	margin: -5px 60px 50px 60px;
+	margin: -5px 60px 55px 60px;
 }
 
 .fix {
@@ -46,20 +46,20 @@
 /* Friends list */
 
 .friends-list {
-	margin-top: 30px;
+	margin-top: 80px;
 }
 
 .search {
 	margin-bottom: 10px;
 	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
-	border-radius: 5px;
+	border-radius: 6px;
 }
 
 .friends-block {
 	overflow-y: auto;
 	max-height: 480px;
 	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
-	border-radius: 5px;
+	border-radius: 6px;
 	border: 1px solid #ccc;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .friend-name {
-	width: 230px;
+	width: 212px;
 	height: 50px;
 	padding-top: 15px;
 }
@@ -103,20 +103,30 @@
 }
 
 .info-links {
-	padding: 8px 0px 0px 10px;
+	padding: 10px 0px 0px 15px;
 }
 
 .info-name {
-
+	font-size: 20px;
+	margin-left: 10px;
 }
 
 .info-count {
-
+	display: block;
+	margin-top: 5px;
 }
 
 .info-font {
 	color: #090909;
 	font-family: 'Roboto';
+	&:hover {
+		text-decoration: none;
+		color: #090909;
+	}
+	&:focus {
+		text-decoration: none;
+		color: #090909;
+	}
 }
 
 /* Content */
