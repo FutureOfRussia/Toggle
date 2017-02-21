@@ -10,10 +10,9 @@ class PagesController < ApplicationController
 			end
 
 			vk = VkontakteApi::Client.new(session[:token])
-			$current_user = vk.users.get(user_ids: session[:vk_id], 
-										 fields: [:screen_name, :photo, :counters]).first
+			$current_user = vk.users.get(fields: [:screen_name, :photo, :counters]).first
 			$friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
-			$photos = vk.photos.get(uid: session[:vk_id], album_id: 'saved', rev: 1)
+			$photos = vk.photos.get(album_id: 'saved', rev: 1)
 		end
 	end
 
