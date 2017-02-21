@@ -17,36 +17,66 @@
 	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.5);
 }
 
+.container {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 /* Logo */
 
 .logo {
-
+	text-align: center;
+	font-size: 36pt;
+	font-family: 'Raleway';
+	text-shadow: 3px 6px 20px rgba(0,0,0,0.3);
+	padding-top: 5px;
+	height: 80px; 
 }
 
 /* Friends list */
 
 .friends-list {
-
+	margin-top: 30px;
 }
 
 .search {
-
+	margin-bottom: 10px;
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+	border-radius: 5px;
 }
 
 .friends-block {
-
+	overflow-y: auto;
+	max-height: 480px;
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4)
+	border-radius: 5px;
+	border: 1px solid #ccc;
 }
 
 .friend-block {
-
+	display: flex;
+	padding: 5px 5px 5px 10px;
+	color: #090909;
+	font-size: 15px;
+	font-family: 'Roboto';
+	&:hover {
+		text-decoration: none;
+		background-color: #eeeeee;
+	}
+	&:focus {
+		text-decoration: none;
+	}
 }
 
 .friend-name {
-
+	width: 230px;
+	height: 50px;
+	padding-top: 15px;
 }
 
 .friend-img {
-
+	width: 50px;
+	height: 50px;
 }
 
 /* Info block */
