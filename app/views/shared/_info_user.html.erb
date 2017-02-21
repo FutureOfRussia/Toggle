@@ -9,6 +9,7 @@
    	<%= link_to signout_path, method: :delete, class: 'info-font' do %>
    		<span class="glyphicon glyphicon-log-out"></span>
   	<% end %>
-	<span class="glyphicon glyphicon-picture"></span>
-	<span class="info-font info-count">Изображений: <%= $photos.first.last %></span>
+	<span class="glyphicon glyphicon-picture  info-count">
+		<span class="info-font">Изображений: <%= $photos.first.last %></span>
+	</span>
 </div>
