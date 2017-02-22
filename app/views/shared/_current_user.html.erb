@@ -6,7 +6,17 @@
 			</a>
 			<div id="<%= item.id %>" class="modal">
 				<div class="modal-block modal-content">
-					<img src="<%= item.photo_1280 %>" class="modal-img">
+					<a href="#" data-dismiss="modal">
+						<% if item.photo_2560.present? %>
+							<img src="<%= item.photo_2560 %>" class="modal-img">
+						<% elsif item.photo_1280.present? %>
+							<img src="<%= item.photo_1280 %>" class="modal-img">
+						<% elsif item.photo_807.present? %>
+							<img src="<%= item.photo_807 %>" class="modal-img">
+						<% else %>
+							<img src="<%= item.photo_604 %>" class="modal-img">
+						<% end %>		
+					</a>
 				</div>
 			</div>
 		</div>
