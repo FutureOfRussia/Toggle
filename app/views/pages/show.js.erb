@@ -1,2 +1,5 @@
+$(document).ready(function() {
+	$('body, html').animate({scrollTop: 0}, 1000);
+};
 $("#info").html("<%= escape_javascript(render('shared/info_friend')) %>")
 $("#content").html("<%= escape_javascript(render('shared/friend')) %>")

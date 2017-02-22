@@ -1,7 +1,7 @@
 <div class="content">		
 	<% $photos.items.each do |item| %>
 		<div class="cont-block">
-			<a href="#" data-toggle="modal" data-toggle="tooltip" data-target="#<%= item.id %>" data-placement="right" title="Click to open in full size">
+			<a href="#" data-toggle="modal" data-target="#<%= item.id %>">
 				<img src="<%= item.photo_604 %>" class="cont-img">
 			</a>
 			<div id="<%= item.id %>" class="modal">
