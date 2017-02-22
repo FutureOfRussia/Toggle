@@ -3,6 +3,10 @@
 
 /* Scrollbar */
 
+.fix > ::-webkit-scrollbar {
+	display: none;
+}
+
 ::-webkit-scrollbar {
 	width: 12px;
 }
@@ -29,6 +33,9 @@
 
 .fix {
 	position: fixed;
+	height: 100%;
+	overflow-y: auto;
+	padding: 10px;
 }
 
 /* Logo */
@@ -47,6 +54,7 @@
 
 .friends-list {
 	margin-top: 80px;
+	margin-bottom: 15px;
 }
 
 .search {
