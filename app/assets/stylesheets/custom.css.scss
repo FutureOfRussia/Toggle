@@ -3,10 +3,6 @@
 
 /* Scrollbar */
 
-.fix > ::-webkit-scrollbar {
-	display: none;
-}
-
 ::-webkit-scrollbar {
 	width: 12px;
 }
@@ -36,6 +32,9 @@
 	height: 100%;
 	overflow-y: auto;
 	padding: 10px;
+	::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 /* Logo */
