@@ -22,8 +22,8 @@
 		</div>
 	<% end %>
 	<% if $photos.first.last > 100 %>
-		<div class="load" id="load">
-			<a href="/load/<%= $current_user.id %>" data-remote="true">load more</a>
+		<div id="load">
+			<a href="/load/<%= $current_user.id %>" data-remote="true" class="load">load more</a>
 		</div>
 	<% end %>
 </div>
