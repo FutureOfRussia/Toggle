@@ -13,8 +13,8 @@ class PagesController < ApplicationController
 			$current_user = vk.users.get(fields: [:screen_name, :photo, :counters]).first
 			$friends = vk.friends.search(fields: [:screen_name, :name, :photo], count: 1000)
 			$photos = vk.photos.get(album_id: 'saved', rev: 1, count: 100)
-			@m = ($photos.first.last / 100) + 1
-			@k = 1
+			$m = ($photos.first.last / 100) + 1
+			$k = 1
 		end
 	end
 
@@ -51,9 +51,9 @@ class PagesController < ApplicationController
 
 		if @check.present?
 			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1, count: 100)
+			$m = (@friend_photos.first.last / 100) + 1
+			$k = 1
 		end
-			@k = 1
-			@m = (@friend_photos.first.last / 100) + 1
 
 		respond_to do |format|
 			format.js
@@ -77,8 +77,8 @@ class PagesController < ApplicationController
 	def load
 		@owner_id = params[:id]
 		vk = VkontakteApi::Client.new(session[:token])
-		offset = 100 * @k
-		@k += 1
+		offset = 100 * $k
+		$k += 1
 		@friend_photos = vk.photos.get(owner_id: @owner_id, album_id: 'saved', rev: 1, count: 100, offset: offset)
 		respond_to do |format|
 			format.js
