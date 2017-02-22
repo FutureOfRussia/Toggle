@@ -22,9 +22,11 @@
 				</div>
 			</div>
 		<% end %>
-		<div id="load">
-			<a href="/load/<%= @friend.id %>" data-remote="true">load more</a>
-		</div>
+		<% if @friend_photos.first.last > 100 %>
+			<div id="load">
+				<a href="/load/<%= @friend.id %>" data-remote="true">load more</a>
+			</div>
+		<% end %>
 	<% else %>
 		<div class="alert alert-danger">
 			Пользователь ограничил доступ к фотографиям.
