@@ -36,9 +36,9 @@ class PagesController < ApplicationController
 		end
 
 		vk = VkontakteApi::Client.new(session[:token])
-		$friend_id = params[:id]
-		@friend = vk.users.get(user_ids: $friend_id, fields: [:screen_name, :name, :photo]).first
-		albums = vk.photos.getAlbums(owner_id: $friend_id, need_system: 1)
+		friend_id = params[:id]
+		@friend = vk.users.get(user_ids: friend_id, fields: [:screen_name, :name, :photo]).first
+		albums = vk.photos.getAlbums(owner_id: friend_id, need_system: 1)
 		items = albums.items
 
 			items.each do |item|
@@ -48,7 +48,7 @@ class PagesController < ApplicationController
 			end
 
 		if @check.present?
-			@friend_photos = vk.photos.get(owner_id: $friend_id, album_id: 'saved', rev: 1, count: 100)
+			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1, count: 100)
 			$k = 1 
 		end
 
@@ -72,10 +72,11 @@ class PagesController < ApplicationController
 	end
 
 	def load
+		owner_id = params[:id]
 		vk = VkontakteApi::Client.new(session[:token])
 		offset = 100 * $k
 		$k += 1
-		@friend_photos = vk.photos.get(owner_id: $friend_id, album_id: 'saved', rev: 1, count: 100, offset: offset)
+		@friend_photos = vk.photos.get(owner_id: owner_id, album_id: 'saved', rev: 1, count: 100, offset: offset)
 		respond_to do |format|
 			format.js
 		end
