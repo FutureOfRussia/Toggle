@@ -51,9 +51,9 @@ class PagesController < ApplicationController
 
 		if @check.present?
 			@friend_photos = vk.photos.get(owner_id: friend_id, album_id: 'saved', rev: 1, count: 100)
+		end
 			@k = 1
 			@m = (@friend_photos.first.last / 100) + 1
-		end
 
 		respond_to do |format|
 			format.js
