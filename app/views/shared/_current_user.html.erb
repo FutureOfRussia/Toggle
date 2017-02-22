@@ -1,12 +1,18 @@
 <div class="content">		
 	<% $photos.items.each do |item| %>
 		<div class="cont-block">
-			<img src="<%= item.photo_604 %>" class="cont-img">
-		</div>
-	<% end %>
-	<% if $photos.first.last > 200 %>
-		<div class="load-btn" id="load">
-			<a href="/load" data-remote="true">Загрузить еще...</a>
+			<a href="#" data-toggle="modal" data-target="#myModal">
+				<img src="<%= item.photo_604 %>" class="cont-img">
+			</a>
+			<div id="myModal" class="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<img src="<%= item.photo_604 %>">
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	<% end %>
 </div>
