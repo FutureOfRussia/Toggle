@@ -72,6 +72,7 @@ class PagesController < ApplicationController
 	end
 
 	def load
+		vk = VkontakteApi::Client.new(session[:token])
 		offset = 100 * $k
 		$k += 1
 		@friend_photos = vk.photos.get(owner_id: $friend_id, album_id: 'saved', rev: 1, count: 100, offset: offset)
