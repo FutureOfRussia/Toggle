@@ -17,11 +17,6 @@
 	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.5);
 }
 
-.container {
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-
 .br {
 	border-bottom: 3px solid;
 	margin: -5px 60px 55px 60px;
@@ -31,7 +26,7 @@
 	position: fixed;
 	height: 100%;
 	overflow-y: auto;
-	padding: 10px;
+	padding: 25px 10px;
 	&::-webkit-scrollbar {
 		display: none;
 	}
@@ -140,6 +135,8 @@
 
 .content {
 	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 10px;
 }
 
 .cont-block {
