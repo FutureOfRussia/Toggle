@@ -23,7 +23,7 @@
 			</div>
 		<% end %>
 		<% if @friend_photos.first.last > 100 %>
-			<div id="load">
+			<div class="load" id="load">
 				<a href="/load/<%= @friend.id %>" data-remote="true">load more</a>
 			</div>
 		<% end %>
