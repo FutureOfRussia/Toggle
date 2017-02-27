@@ -146,11 +146,13 @@
 }
 
 .content-bar {
-
+	text-align: justify;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 .cont-block {
-
+	
 }
 
 .block-list {
@@ -158,18 +160,18 @@
 }
 
 .block-bar {
-
+	margin: 0 10px 10px 0;
 }
 
 .cont-img{
-
-}
-
-.img-list {
 	box-shadow: 0px 0px 20px 0px rgb(0,0,0);
 	&:hover {
 		box-shadow: 0px 0px 20px 5px #92b4eb;
 	}
+}
+
+.img-list {
+	
 }
 
 .img-bar {
