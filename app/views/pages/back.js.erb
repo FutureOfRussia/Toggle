@@ -1,3 +1,4 @@
-$('body, html').animate({scrollTop: 0}, 500)
 $("#info").html("<%= escape_javascript(render('shared/info_user')) %>")
+$("#home-link").html("<%= escape_javascript(render('shared/up-link')) %>")
 $("#content").html("<%= escape_javascript(render('shared/current_user')) %>")
+$('body, html').animate({scrollTop: 0}, 500)
