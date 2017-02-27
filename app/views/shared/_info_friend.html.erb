@@ -6,10 +6,10 @@
 		<span class="glyphicon glyphicon-user"></span>
 	<% end %>
 	<span class="info-name info-font"><%= @friend.first_name %></span>
-	<a href="/back" data-remote="true" class="info-font">
-		<span class="glyphicon glyphicon-home"></span>
-	</a>
 	<span class="glyphicon glyphicon-picture info-count">
 		<span class="info-font">Изображений: <% if @check.present? %><%= @friend_photos.first.last %><% else %>Ограничено<% end %></span>
 	</span>
+	<a href="/back" data-remote="true" class="info-font home-link">
+		<span class="glyphicon glyphicon-home"></span>
+	</a>
 </div>
