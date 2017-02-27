@@ -2,20 +2,22 @@
 	<%= render 'shared/current_user' %>
 </div>
 <div class="col-md-3">
-	<div class="row fix">
-		<div class="logo">Toggle</div>
-		<div class="br"></div>
-		<div class="info-block" id="info">
-			<%= render 'shared/info_user' %>
-		</div>
-		<div class="friends-list">
-			<div class="search">
-				<form accept-charset="UTF-8" action="/search" data-remote="true" method="get">
-					<input type="text" name="search" class="form-control" placeholder="Search among friends">
-				</form>
+	<div class="row">
+		<div class="fix">
+			<div class="logo">Toggle</div>
+			<div class="br"></div>
+			<div class="info-block" id="info">
+				<%= render 'shared/info_user' %>
 			</div>
-			<div class="friends-block" id="search">	
-				<%= render 'shared/friends' %>
+			<div class="friends-list">
+				<div class="search">
+					<form accept-charset="UTF-8" action="/search" data-remote="true" method="get">
+						<input type="text" name="search" class="form-control" placeholder="Search among friends">
+					</form>
+				</div>
+				<div class="friends-block" id="search">	
+					<%= render 'shared/friends' %>
+				</div>
 			</div>
 		</div>
 	</div>
