@@ -22,7 +22,7 @@ class PagesController < ApplicationController
 		if log_in?
 			search = params[:search]
 			vk = VkontakteApi::Client.new(session[:token])
-			$search_friends = vk.friends.search(q: search, fields: [:screen_name, :name, :photo])
+			$search_friends = vk.friends.search(q: search, fields: [:screen_name, :name, :photo], count: 1000)
 			respond_to do |format|
 				format.js
 			end	
