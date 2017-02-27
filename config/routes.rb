@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   	match '/search', to: 'pages#search', via: 'get'
   	match '/back', to: 'pages#back', via: 'get'
   	match '/up', to: 'pages#up', via: 'get'
+  	match '/bar', to: 'pages#bar', via: 'get'
   	match '/load/:id', to: 'pages#load', via: 'get'
 	match '/signin', to: 'sessions#new', via: 'get'
 	match '/callback', to: 'sessions#callback', via: 'get'

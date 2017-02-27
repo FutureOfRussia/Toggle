@@ -1,8 +1,8 @@
-<div class="content">		
+<div id="cont" class="content-list">		
 	<% $photos.items.each do |item| %>
-		<div class="cont-block">
+		<div id="cont-block" class="cont-block-list">
 			<a href="#" data-toggle="modal" data-target="#<%= item.id %>">
-				<img src="<%= item.photo_604 %>" class="cont-img">
+				<img src="<%= item.photo_604 %>" id="cont-img" class="cont-img-list">
 			</a>
 			<div id="<%= item.id %>" class="modal">
 				<div class="modal-block modal-content">

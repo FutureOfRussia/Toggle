@@ -89,5 +89,11 @@ class PagesController < ApplicationController
 		respond_to do |format|
 			format.js
 		end
+	end
+
+	def bar
+		respond_to do |format|
+			format.js
+		end
 	end	
 end
