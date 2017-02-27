@@ -221,18 +221,16 @@
 }
 
 .t4 {
-	padding: 10px;
-	width: 160px;
-	margin-left: 155px;
-	border-radius: 25px;
-	&:hover {
-		box-shadow: 0px 0px 20px 5px #92b4eb;
-	}
+	margin-top: 10px;
 }
 
 .welc-btn {
+	padding: 10px 15px;
+	width: 160px;
+	border-radius: 25px;
 	color: #090909;
 	&:hover {
+		box-shadow: 0px 0px 20px 5px #92b4eb;
 		text-decoration: none;
 		color: #090909;
 	}
