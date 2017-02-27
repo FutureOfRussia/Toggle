@@ -15,6 +15,7 @@ class PagesController < ApplicationController
 			$photos = vk.photos.get(album_id: 'saved', rev: 1, count: 100)
 			$m = ($photos.first.last / 100) + 1
 			$k = 1
+			$p = 0
 		end
 	end
 
@@ -55,6 +56,10 @@ class PagesController < ApplicationController
 			$k = 1
 		end
 
+		if $p = 1
+			$p = 0
+		end
+		
 		respond_to do |format|
 			format.js
 		end
@@ -69,6 +74,9 @@ class PagesController < ApplicationController
 		$current_user = vk.users.get(fields: [:screen_name, :photo, :counters]).first
 		$friends = vk.friends.get(order: 'random', fields: [:screen_name, :name, :photo])
 		$photos = vk.photos.get(album_id: 'saved', rev: 1, count: 100)
+		if $p = 1
+			$p = 0
+		end
 		respond_to do |format|
 			format.js
 		end
@@ -92,6 +100,11 @@ class PagesController < ApplicationController
 	end
 
 	def bar
+		if $p = 0
+			$p = 1
+		else
+			$p = 0
+		end
 		respond_to do |format|
 			format.js
 		end

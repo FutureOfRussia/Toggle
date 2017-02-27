@@ -1,7 +1,7 @@
 <% @friend_photos.items.each do |item| %>
-	<div class="cont-block">
+	<div class="cont-block <% if $p = 1 %> block-bar <% else %> block-list <% end %>">
 		<a href="#" data-toggle="modal" data-target="#<%= item.id %>">
-			<img src="<%= item.photo_604 %>" class="cont-img">
+			<img src="<%= item.photo_604 %>" class="cont-img <% if $p = 1 %> img-bar <% end %>">
 		</a>
 		<div id="<%= item.id %>" class="modal">
 			<div class="modal-block modal-content">
