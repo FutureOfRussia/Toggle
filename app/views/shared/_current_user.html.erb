@@ -2,7 +2,7 @@
 	<% $photos.items.each do |item| %>
 		<div id="cont-block" class="cont-block-list">
 			<a href="#" data-toggle="modal" data-target="#<%= item.id %>">
-				<img src="<%= item.photo_604 %>" id="cont-img" class="cont-img-list">
+				<img src="<%= item.photo_604 %>" id="cont-img-<%= item.id %>" class="cont-img-list">
 			</a>
 			<div id="<%= item.id %>" class="modal">
 				<div class="modal-block modal-content">
