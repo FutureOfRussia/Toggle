@@ -1,24 +1,28 @@
-# README
+## Toggle - RoR приложение основанное на VK API.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+####[Задеплоенное приложение на Heroku.](https://fortoggle.herokuapp.com/)
+  
+Это приложение использует гем [vkontakte_api](https://github.com/7even/vkontakte_api) для взаимодействия с VK API.
+Основное назначение приложения - просмотр сохраненных изображений пользователей VK.
 
-Things you may want to cover:
+#### Авторизация
+  
+Авторизация происходит по протоколу [OAuth 2.0](https://oauth.net/2/), используется [authorization code flow](https://vk.com/dev/authcode_flow_user) способ — двухэтапный вариант с дополнительной аутентификацией сервера:
+  
+* пользователь переходит на страницу ВКонтакте, где ему предлагается дать приложению права на доступ к его данным
+* после согласия пользователь возвращается обратно в приложение, с передачей кода в параметрах
+* приложение запрашивает у ВКонтакте токен доступа и id текущего пользователя, используя полученный ранее код
+* приложение вызывает методы API, используя токен доступа (хранящийся в сессии)
 
-* Ruby version
+Приложение не хранит в БД никаких данных о пользователях, вместо этого используется куки для хранения пользовательского токена и сохранения сессии.
 
-* System dependencies
+#### Методы API
+Приложение использует только методы для получения даных с серверов VK, такие как:
+  
+- `friends.get` - для "вытягивания" списка друзей
+- `photos.get` - для фотографий
+- `users.get` - "вытягивание" конкретного пользователя по id
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Все методы сосредоточены в [app/controllers/pages_controller.rb](https://github.com/FutureOfRussia/toggle/blob/master/app/controllers/pages_controller.rb).
+  
+Фактически приложение имеет одну полноценную вьюху, содержимым которой пользователь манипулирует посредством AJAX.
