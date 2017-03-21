@@ -1,6 +1,6 @@
 ## Toggle - RoR приложение основанное на VK API.
 
-####[Задеплоенное приложение на Heroku.](https://fortoggle.herokuapp.com/)
+#### [Задеплоенное приложение на Heroku.](https://fortoggle.herokuapp.com/)
   
 Это приложение использует гем [vkontakte_api](https://github.com/7even/vkontakte_api) для взаимодействия с VK API.
 Основное назначение приложения - просмотр сохраненных изображений пользователей VK.
